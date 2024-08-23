@@ -66,13 +66,13 @@ window.customElements.define('nav-band', NavBand);
 
 
 const template_hero = document.createElement('template');
-template_hero.innerHTML = `<section class="hero-wrap hero-wrap-2" style="background-image: url('images/4m.jpeg');" data-stellar-background-ratio="0.5">
+template_hero.innerHTML = `<section class="hero-wrap hero-wrap-2" style="background-image: url('images/4j.jpeg');" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-end justify-content-center">
 				<div class="col-md-9 ftco-animate text-center mb-5">
-					<h1 class="mb-2 bread">Menu</h1>
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Menu <i class="fa fa-chevron-right"></i></span></p>
+					<h1 class="mb-2 bread">Book A Table Now</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Reservation <i class="fa fa-chevron-right"></i></span></p>
 				</div>
 			</div>
 		</div>
@@ -92,6 +92,7 @@ window.customElements.define('hero-section', HeroSection);
 
 function appendCssLinks(shadowRoot) {
     const cssFiles = [
+      'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
       'css/style.css',
       'css/animate.css',
       'css/owl.carousel.min.css',
@@ -109,3 +110,32 @@ function appendCssLinks(shadowRoot) {
       shadowRoot.appendChild(linkElem);
     });
   }
+
+
+  function appendJsScripts(shadowRoot) {
+    const jsFiles = [
+      'js/jquery.min.js',
+      'js/jquery-migrate-3.0.1.min.js',
+      'js/popper.min.js',
+      'js/bootstrap.min.js',
+      'js/jquery.easing.1.3.js',
+      'js/jquery.waypoints.min.js',
+      'js/jquery.stellar.min.js',
+      'js/owl.carousel.min.js',
+      'js/jquery.magnific-popup.min.js',
+      'js/jquery.animateNumber.min.js',
+      'js/bootstrap-datepicker.js',
+      'js/jquery.timepicker.min.js',
+      'js/scrollax.min.js',
+      'https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false',
+      'js/google-map.js',
+      'js/main.js'
+    ];
+  
+    jsFiles.forEach(jsFile => {
+      const scriptElem = document.createElement('script');
+      scriptElem.setAttribute('src', jsFile);
+      shadowRoot.appendChild(scriptElem);
+    });
+  }
+  
