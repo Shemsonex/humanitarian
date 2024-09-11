@@ -90,6 +90,31 @@ window.customElements.define('hero-section', HeroSection);
 
 
 
+const template_booktable = document.createElement('template');
+template_booktable.innerHTML = `<section class="hero-wrap hero-wrap-2" style="background-image: url('images/4j.jpeg');" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate text-center mb-5">
+					<h1 class="mb-2 bread">Book A Table Now</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Reservation <i class="fa fa-chevron-right"></i></span></p>
+				</div>
+			</div>
+		</div>
+	</section>`;
+    
+class BookTableSection extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    appendCssLinks(this.shadowRoot);    
+    this.shadowRoot.appendChild(template_booktable.content.cloneNode(true));
+  }
+}
+window.customElements.define('booktable-section', BookTableSection);
+
+
+
 function appendCssLinks(shadowRoot) {
     const cssFiles = [
       'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
